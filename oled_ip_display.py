@@ -5,22 +5,20 @@ import logging
 import subprocess
 from datetime import datetime, timedelta
 
-# 设置日志
 logging.basicConfig(filename='/var/log/oled_ip_display.log', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
-# 配置参数
+
 CONFIG = {
     'OLED_ADDRESS': 0x3C,
     'I2C_BUS': 1,
     'IP_CHECK_TIMEOUT': 120,
     'IP_CHECK_INTERVAL': 5,
     'DISPLAY_UPDATE_INTERVAL': 30,
-    'SERVICE_CHECK_INTERVAL': 20,  # 检查服务状态的间隔(秒)
-    'SERVICE_NAME': 'main-server.service'  # 要监控的服务名称
+    'SERVICE_CHECK_INTERVAL': 20, 
+    'SERVICE_NAME': 'main-server.service'  
 }
 
-# 创建 I2C 总线实例
 bus = smbus2.SMBus(CONFIG['I2C_BUS'])
 
 
