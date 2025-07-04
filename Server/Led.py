@@ -298,7 +298,6 @@ class Led:
             self.strip.set_all_led_color(0, 0, 0)
 
     def __del__(self):
-        """清理函数"""
         if hasattr(self, 'strip') and self.Ledsupported:
             self.strip.set_all_led_color(0, 0, 0)
 
