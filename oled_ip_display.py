@@ -95,8 +95,7 @@ def get_ip_address():
 
 def check_service_status(service_name):
     """
-    检查系统服务状态
-    返回: (is_active, status_message)
+    (is_active, status_message)
     """
     try:
         result = subprocess.run(['systemctl', 'is-active', service_name], 
